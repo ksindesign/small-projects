@@ -1,0 +1,378 @@
+/**
+  * XXX: This is the common mixin file. If you want to add new reusable mixins, please notify
+  * everyone in Microsoft Teams """Team - Aloha - web, CSS Style Guide"""
+  * channel, in order to let developers review and be aware of the new mixin as much as possible.
+*/
+
+@mixin make-container($padding-x: $spacing-base) {
+  width: 100%;
+  padding-right: $padding-x;
+  padding-left: $padding-x;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+/**
+  * usage: https://getbootstrap.com/docs/4.3/utilities/clearfix/
+*/
+@mixin clearfix {
+  &::after {
+    display: block;
+    clear: both;
+    content: '';
+  }
+}
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin full-vh-box {
+  &#{&} {
+    /** Mobile viewport bug fix. If this value could not be understand, 
+      it will use a defined understandable value
+      Ref: https://allthingssmitty.com/2020/05/11/css-fix-for-100vh-in-mobile-webkit/  
+      **/
+    height: 100%;
+    height: -moz-available; /* WebKit-based browsers will ignore this. */
+    height: -webkit-fill-available; /* Mozilla-based browsers will ignore this. */
+  }
+}
+
+@mixin transform-center {
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+@mixin key-fadeIn {
+  @keyframes fadeIn {
+    from {
+      opacity: 0;
+    }
+
+    to {
+      opacity: 1;
+    }
+  }
+}
+
+@mixin border-radius {
+  border-radius: 3px;
+}
+
+@mixin box-shadow-top {
+  box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
+}
+
+@mixin box-shadow-middle {
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.2);
+}
+
+@mixin motion-fadeIn {
+  animation: fadeIn 0.2s linear 0s;
+}
+
+// Hide from both screenreaders and browsers
+@mixin hidden {
+  display: none;
+  visibility: hidden;
+}
+
+@mixin visible($state: 'block') {
+  display: unquote($state);
+  visibility: visible;
+}
+
+// Hide visually and from screenreaders, but maintain layout
+@mixin invisible {
+  visibility: hidden;
+}
+
+/**
+  * Text truncate
+  * Requires inline-block or block for proper styling
+*/
+@mixin text-truncate($numLines: null) {
+  @if $numLines != null {
+    display: -webkit-box;
+    -webkit-line-clamp: $numLines;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    // this is a IE11 fix since -webkit-line-clamp is not supported
+    @media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      width: 100%;
+    }
+  } @else {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+
+/**
+  * Give dimensions to a box
+  * usage: @include box(50px);
+*/
+@mixin box($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+
+/**
+  * Shorthand mixin for offset positioning
+  * @param {String} $position - Either `relative`, `absolute` or `fixed`
+  * @param {Length} $top [null] - Top offset
+  * @param {Length} $right [null] - Right offset
+  * @param {Length} $bottom [null] - Bottom offset
+  * @param {Length} $left [null] - Left offset
+  * usage
+    * absolute : @include(absolute, 10px, 0)
+    * relative : @include(relative, 10px, 0)
+    * fixed : @include(fixed, 10px, 0)
+*/
+@mixin position(
+  $position,
+  $top: null,
+  $right: null,
+  $bottom: null,
+  $left: null
+) {
+  position: $position;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+@mixin absolute($args...) {
+  @include position(absolute, $args...);
+}
+
+@mixin relative($args...) {
+  @include position(relative, $args...);
+}
+
+@mixin fixed($args...) {
+  @include position(fixed, $args...);
+}
+
+@mixin icon-svg-fill-stroke($color) {
+  svg {
+    fill: $color;
+    stroke: $color;
+  }
+}
+
+@mixin hoverStyle($prop, $color) {
+  &:hover {
+    #{$prop}: $color;
+  }
+}
+
+/* https://justmarkup.com/articles/2015-07-31-dealing-with-long-words-in-css/ */
+@mixin break-word {
+  overflow-wrap: break-word;
+  word-wrap: break-word;
+  hyphens: auto;
+}
+
+/**
+  * Lists
+  * Unstyled keeps list items block level, just removes default browser padding and list-style
+*/
+@mixin list-unstyled {
+  padding-left: 0;
+  list-style: none;
+}
+
+/**
+  * Responsive image
+  * Keep images from scaling beyond the width of their parents.
+*/
+@mixin img-fluid {
+  // Part 1: Set a maximum relative to the parent
+  max-width: 100%;
+  // Part 2: Override the height to auto, otherwise images will be stretched
+  // when setting a width and height attribute on the img element.
+  height: auto;
+}
+
+@mixin resetButtonStyle {
+  background-color: transparent;
+  border: none;
+  cursor: pointer;
+  // outline: none;
+  margin: 0;
+  padding: 0;
+  appearance: none;
+  color: inherit;
+}
+
+@mixin disableScrollBar-x {
+  // carousel is always scrollable on x-axis.
+  // we can hide y-axis scroller
+  overflow-y: hidden;
+
+  // disable scroll bar（IE・Edge）
+  -ms-overflow-style: none;
+  // disable scroll bar（Firefox）
+  scrollbar-width: none;
+  // disable scroll bar（Chrome・Safari）
+  &::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+/**
+  * @mixin for mediaquery
+  * example usage:
+    * smartphone
+    @include media(sp) {
+      width: 100px;
+    }
+
+    * tablet
+    @include media(tl) {
+      width: 200px;
+    }
+
+    * pc
+    @include media(pc) {
+      width: 300px;
+    }
+*/
+@mixin media($device-types...) {
+  @each $device-type in $device-types {
+    @if $device-type == sp {
+      @media (max-width: $sp-max) {
+        @content;
+      }
+    } @else if $device-type == tl {
+      @media (min-width: $tl-min) and (max-width: $tl-max) {
+        @content;
+      }
+    } @else if $device-type == pc {
+      @media (min-width: $pc-min) {
+        @content;
+      }
+    }
+  }
+}
+
+@mixin overlay {
+  @include fixed(0, 0, 0, 0);
+
+  background-color: $black;
+  opacity: 0.8;
+  touch-action: none;
+  pointer-events: none;
+  z-index: $zIndex-modal - 1;
+}
+
+@mixin loadingBox {
+  height: 100%;
+  width: 100%;
+  background: $isabelline;
+  // TODO: Add loading animation
+}
+
+@mixin listRoot {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/**
+* Box ratio
+*/
+@mixin box16by9($width) {
+  width: $width;
+  height: calc(#{$width} * #{$ratioHeight16by9});
+}
+
+@mixin box4by3($width) {
+  width: $width;
+  height: calc(#{$width} * #{$ratioHeight4by3});
+}
+
+@mixin box3by2($width) {
+  width: $width;
+  height: calc(#{$width} * #{$ratioHeight3by2});
+}
+
+/** 
+ * Hover 
+*/
+@mixin header-hover {
+  &:hover {
+    text-decoration-line: underline;
+    cursor: pointer;
+  }
+}
+
+@mixin supplier-page-header {
+  width: 100%;
+  background-color: $white;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  padding: $spacing-m;
+}
+
+/** 
+ * Link with green color
+*/
+@mixin green-link-underline {
+  cursor: pointer;
+  text-decoration: underline;
+  color: $cilantro;
+}
+
+@mixin green-link {
+  cursor: pointer;
+  color: $cilantro;
+}
+
+@mixin supplier-dialog-header {
+  border-radius: 10px 10px 0 0;
+  background: $shady-white;
+  box-shadow: none;
+}
+
+@mixin supplier-dialog-content {
+  background: $white;
+  border-radius: 0 0 10px 10px;
+  height: 100%;
+  overflow: auto;
+  display: block;
+  padding: $spacing-16 $spacing-24 $spacing-24;
+
+  &::-webkit-scrollbar {
+    width: 10px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $white;
+    border-left: solid 1px $isabelline;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $pastel-gray;
+    border-radius: 10px;
+    box-shadow: inset 0 0 0 2px $white;
+  }
+}
+
+@mixin media-crop($width, $height) {
+  width: $width;
+  height: $height;
+  object-fit: cover;
+  object-position: center;
+}

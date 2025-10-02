@@ -1,0 +1,325 @@
+@mixin font-regular-12 {
+  font-size: 12px;
+  line-height: 18px;
+}
+
+@mixin font-pc-display-d1 {
+  font-size: 48px;
+  line-height: 55px;
+}
+
+@mixin font-pc-display-d1-bold {
+  @include font-pc-display-d1;
+  @include bold;
+}
+
+@mixin font-pc-display-d2 {
+  font-size: 40px;
+  line-height: 46px;
+}
+
+@mixin font-pc-display-d2-bold {
+  @include font-pc-display-d2;
+  @include bold;
+}
+
+@mixin font-pc-display-d3 {
+  font-size: 36px;
+  line-height: 41px;
+}
+
+@mixin font-pc-display-d3-bold {
+  @include font-pc-display-d3;
+  @include bold;
+}
+
+@mixin font-pc-header-h1 {
+  font-size: 32px;
+  line-height: 44px;
+}
+
+@mixin font-pc-header-h1-bold {
+  @include font-pc-header-h1;
+  @include bold;
+}
+
+@mixin font-pc-header-h2 {
+  font-size: 28px;
+  line-height: 40px;
+}
+
+@mixin font-pc-header-h2-bold {
+  @include font-pc-header-h2;
+  @include bold;
+}
+
+@mixin font-pc-header-h3 {
+  font-size: 24px;
+  line-height: 36px;
+}
+
+@mixin font-pc-header-h3-bold {
+  @include font-pc-header-h3;
+  @include bold;
+}
+
+@mixin font-pc-header-h4 {
+  font-size: 20px;
+  line-height: 32px;
+}
+
+@mixin font-pc-header-h4-bold {
+  @include font-pc-header-h4;
+  @include bold;
+}
+
+@mixin font-pc-header-h5 {
+  font-size: 18px;
+  line-height: 28px;
+}
+
+@mixin font-pc-header-h5-bold {
+  @include font-pc-header-h5;
+  @include bold;
+}
+
+@mixin font-pc-header-h6 {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+@mixin font-pc-header-h6-bold {
+  @include font-pc-header-h6;
+  @include bold;
+}
+
+@mixin font-sp-header-h1 {
+  font-size: 28px;
+  line-height: 36px;
+}
+
+@mixin font-sp-header-h1-bold {
+  @include font-sp-header-h1;
+  @include bold;
+}
+
+@mixin font-sp-header-h2 {
+  font-size: 24px;
+  line-height: 30px;
+}
+
+@mixin font-sp-header-h2-bold {
+  @include font-sp-header-h2;
+  @include bold;
+}
+
+@mixin font-sp-header-h3 {
+  font-size: 20px;
+  line-height: 26px;
+}
+
+@mixin font-sp-header-h3-bold {
+  @include font-sp-header-h3;
+  @include bold;
+}
+
+@mixin font-sp-header-h4 {
+  font-size: 18px;
+  line-height: 24px;
+}
+
+@mixin font-sp-header-h4-bold {
+  @include font-sp-header-h4;
+  @include bold;
+}
+
+@mixin font-sp-header-h5 {
+  font-size: 16px;
+  line-height: 22px;
+}
+
+@mixin font-sp-header-h5-bold {
+  @include font-sp-header-h5;
+  @include bold;
+}
+
+@mixin font-sp-header-h6 {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+@mixin font-sp-header-h6-bold {
+  @include font-sp-header-h6;
+  @include bold;
+}
+
+@mixin font-pc-body-b1 {
+  font-size: 16px;
+  line-height: 24px;
+}
+
+@mixin font-pc-body-b1-bold {
+  @include font-pc-body-b1;
+  @include bold;
+}
+
+@mixin font-pc-body-b2 {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+@mixin font-pc-body-b2-bold {
+  @include font-pc-body-b2;
+  @include bold;
+}
+
+@mixin font-pc-body-b3 {
+  font-size: 20px;
+  line-height: 32px;
+}
+
+@mixin font-pc-body-b3-bold {
+  @include font-pc-body-b3;
+  @include bold;
+}
+
+@mixin font-sp-body-b1 {
+  font-size: 14px;
+  line-height: 24px;
+}
+
+@mixin font-sp-body-b1-bold {
+  @include font-sp-body-b1;
+  @include bold;
+}
+
+@mixin font-sp-body-b2 {
+  font-size: 12px;
+  line-height: 20px;
+}
+
+@mixin font-sp-body-b2-bold {
+  @include font-sp-body-b2;
+  @include bold;
+}
+
+@mixin font-sp-body-b3 {
+  font-size: 16px;
+  line-height: 28px;
+}
+
+@mixin font-sp-body-b3-bold {
+  @include font-sp-body-b3;
+  @include bold;
+}
+
+@mixin font-pc-captions-c1 {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+@mixin font-pc-captions-c2 {
+  font-size: 10px;
+  line-height: 14px;
+}
+
+@mixin font-pc-captions-c1-bold {
+  @include font-pc-captions-c1;
+  @include bold;
+}
+
+@mixin font-sp-captions-c1 {
+  @include font-pc-captions-c1;
+}
+
+@mixin font-sp-captions-c2 {
+  @include font-pc-captions-c2;
+}
+
+@mixin font-sp-captions-c1-bold {
+  @include font-sp-captions-c1;
+  @include bold;
+}
+
+@mixin font-sp-captions-c2-bold {
+  @include font-sp-captions-c2;
+  @include bold;
+}
+
+@mixin font-pc-price-p1 {
+  @include font-pc-header-h1;
+}
+
+@mixin font-pc-price-p1-bold {
+  @include font-pc-price-p1;
+  @include bold;
+}
+
+@mixin font-pc-price-p2 {
+  @include font-pc-header-h2;
+}
+
+@mixin font-pc-price-p2-bold {
+  @include font-pc-price-p2;
+  @include bold;
+}
+
+@mixin font-pc-price-p3 {
+  @include font-pc-header-h3;
+}
+
+@mixin font-pc-price-p3-bold {
+  @include font-pc-price-p3;
+  @include bold;
+}
+
+@mixin font-pc-price-p4 {
+  @include font-pc-header-h4;
+}
+
+@mixin font-pc-price-p4-bold {
+  @include font-pc-price-p4;
+  @include bold;
+}
+
+@mixin font-pc-price-p5 {
+  @include font-pc-header-h5;
+}
+
+@mixin font-pc-price-p5-bold {
+  @include font-pc-price-p5;
+  @include bold;
+}
+
+@mixin font-pc-price-p6 {
+  @include font-pc-header-h6;
+}
+
+@mixin font-pc-price-p6-bold {
+  @include font-pc-price-p6;
+  @include bold;
+}
+
+@mixin font-pc-price-p7 {
+  font-size: 14px;
+  line-height: 20px;
+}
+
+@mixin font-pc-price-p7-bold {
+  @include font-pc-price-p7;
+  @include bold;
+}
+
+@mixin font-pc-price-p8 {
+  font-size: 12px;
+  line-height: 16px;
+}
+
+@mixin font-pc-price-p8-bold {
+  @include font-pc-price-p8;
+  @include bold;
+}
+
+@mixin font-pc-price-discount {
+  text-decoration: line-through;
+}

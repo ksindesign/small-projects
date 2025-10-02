@@ -1,0 +1,366 @@
+@import 'https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap';
+@import 'https://fonts.googleapis.com/css2?family=inter&display=swap';
+:root {
+  --h1-fontSize: 48px;
+  --h2-fontSize: 40px;
+  --white: #fcfcfc;
+  --black: #262626;
+}
+
+.wrapper {
+  max-width: 1100px;
+}
+
+.container {
+  max-width: 80%;
+}
+
+.navbar {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-between;
+  width: 100vw;
+}
+.navbar-logo {
+  max-width: 150px;
+  max-height: 100px;
+}
+
+/*----------------------------------------
+       Reset  Default Styles
+----------------------------------------*/
+html,
+body,
+div,
+span,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+abbr,
+address,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+samp,
+strong,
+sub,
+sup,
+var,
+b,
+i,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  font-size: inherit;
+  vertical-align: baseline;
+}
+
+i,
+em {
+  font-style: normal;
+}
+
+small {
+  margin: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+
+body {
+  line-height: 1;
+}
+
+main,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+ul,
+li {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+
+a {
+  margin: 0;
+  padding: 0;
+  font-size: 100%;
+  vertical-align: baseline;
+  background: transparent;
+  color: inherit;
+  text-decoration: none;
+}
+
+ins {
+  background-color: #ff9;
+  color: #000;
+  text-decoration: none;
+}
+
+mark {
+  background-color: #ff9;
+  color: #000;
+  font-style: italic;
+  font-weight: bold;
+}
+
+del {
+  text-decoration: line-through;
+}
+
+abbr[title],
+dfn[title] {
+  border-bottom: 1px dotted;
+  cursor: help;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+td,
+th {
+  padding: 0;
+}
+
+ul,
+dl,
+ol {
+  text-indent: 0;
+}
+
+li {
+  list-style: none;
+}
+
+img {
+  border: 0;
+  max-width: 100%;
+  height: auto;
+  vertical-align: top;
+}
+
+hr {
+  display: block;
+  height: 1px;
+  border: 0;
+  border-top: 1px solid #333;
+  margin: 1em 0;
+  padding: 0;
+}
+
+input,
+select {
+  vertical-align: middle;
+}
+
+button,
+input {
+  line-height: normal;
+}
+
+input,
+textarea {
+  background-image: -webkit-linear-gradient(hsla(0, 0%, 100%, 0), hsla(0, 0%, 100%, 0)); /* Removing the inner shadow, rounded corners on iOS inputs */
+  padding: 4px 8px;
+  border: 1px solid #333;
+  background: #fff;
+}
+
+button,
+input[type=button],
+input[type=reset],
+input[type=submit] {
+  cursor: pointer;
+  -webkit-appearance: button;
+}
+
+/**
+  * XXX: This is the common mixin file. If you want to add new reusable mixins, please notify
+  * everyone in Microsoft Teams """Team - Aloha - web, CSS Style Guide"""
+  * channel, in order to let developers review and be aware of the new mixin as much as possible.
+*/
+/**
+  * usage: https://getbootstrap.com/docs/4.3/utilities/clearfix/
+*/
+/**
+  * Text truncate
+  * Requires inline-block or block for proper styling
+*/
+/**
+  * Give dimensions to a box
+  * usage: @include box(50px);
+*/
+/**
+  * Shorthand mixin for offset positioning
+  * @param {String} $position - Either `relative`, `absolute` or `fixed`
+  * @param {Length} $top [null] - Top offset
+  * @param {Length} $right [null] - Right offset
+  * @param {Length} $bottom [null] - Bottom offset
+  * @param {Length} $left [null] - Left offset
+  * usage
+    * absolute : @include(absolute, 10px, 0)
+    * relative : @include(relative, 10px, 0)
+    * fixed : @include(fixed, 10px, 0)
+*/
+/* https://justmarkup.com/articles/2015-07-31-dealing-with-long-words-in-css/ */
+/**
+  * Lists
+  * Unstyled keeps list items block level, just removes default browser padding and list-style
+*/
+/**
+  * Responsive image
+  * Keep images from scaling beyond the width of their parents.
+*/
+/**
+  * @mixin for mediaquery
+  * example usage:
+    * smartphone
+    @include media(sp) {
+      width: 100px;
+    }
+
+    * tablet
+    @include media(tl) {
+      width: 200px;
+    }
+
+    * pc
+    @include media(pc) {
+      width: 300px;
+    }
+*/
+/**
+* Box ratio
+*/
+/** 
+ * Hover 
+*/
+/** 
+ * Link with green color
+*/
+/* Setting for the whole sheet */
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+
+body {
+  background: #12152c;
+  font-family: "Noto Sans JP", sans-serif;
+}
+
+h1 {
+  color: var(--white);
+  font-size: var(--h1-fontSize);
+  text-align: center;
+  margin-block: 4rem;
+}
+
+h2 {
+  font-size: 24px;
+  line-height: 36px;
+  padding: 16px;
+  cursor: pointer;
+}
+
+.card-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+}
+.card-container div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #30b6d5;
+  border-radius: 4px;
+  padding: 1rem;
+  max-width: 200px;
+  text-align: center;
+  color: var(--white);
+  text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+  aspect-ratio: 1/1;
+  transition: all 0.2s ease-in-out;
+}
+.card-container div:active {
+  scale: 0.98;
+}
+.card-container div:hover {
+  box-shadow: 0 0 25px 5px rgba(79, 223, 255, 0.2);
+}
