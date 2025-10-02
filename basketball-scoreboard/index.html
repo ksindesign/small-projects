@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="board-wrapper">
+      <div id="home">
+        <h2>Home</h2>
+        <div class="score">12</div>
+        <div class="button-container">
+          <button onclick="addPoints('home', 1)">+1</button>
+          <button onclick="addPoints('home', 2)">+2</button>
+          <button onclick="addPoints('home', 3)">+3</button>
+        </div>
+      </div>
+      <div id="guest">
+        <h2>Guest</h2>
+        <div class="score">5</div>
+
+        <div class="button-container">
+          <button onclick="addPoints('guest', 1)">+1</button>
+          <button onclick="addPoints('guest', 2)">+2</button>
+          <button onclick="addPoints('guest', 3)">+3</button>
+        </div>
+      </div>
+    </div>
+    <button onclick="resetScores()" class="reset btn">Reset</button>
+
+    <script src="script.js"></script>
+  </body>
+</html>

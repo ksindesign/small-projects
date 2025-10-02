@@ -1,0 +1,12 @@
+@media screen and (max-width: 768px) {
+  .hero-section {
+    h2 {
+      max-width: 80vw;
+    }
+  }
+
+  .guide-section {
+    max-width: 80vw;
+    flex-wrap: wrap;
+  }
+}

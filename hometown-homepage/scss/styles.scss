@@ -1,0 +1,103 @@
+@use 'mixin' as *;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: sans-serif;
+}
+
+:root {
+  --RED: #e63946;
+  --LIGHT: #f1faee;
+  --AQUA: #a8dadc;
+  --LIGHT-BLUE: #457b9d;
+  --DARK-BLUE: #1d3557;
+}
+
+.hero-section {
+  background-image: url('../images/torshov.jpg');
+  background-size: 100%;
+
+  width: 100vw;
+  height: 60vh;
+  text-align: center;
+  @include flex-center(column);
+  color: var(--LIGHT);
+  line-height: 1.5;
+
+  h1,
+  h2 {
+    padding-inline: 0.5rem;
+
+    margin-block: 1rem;
+  }
+
+  h1 {
+    background: var(--LIGHT-BLUE);
+  }
+  h2 {
+    background: var(--DARK-BLUE);
+    width: 500px;
+  }
+}
+
+.activities-section {
+  background: var(--AQUA);
+  color: var(--DARK-BLUE);
+  padding-block: 2rem;
+  text-align: center;
+
+  .activities-content {
+    @include flex-center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-block: 2rem;
+  }
+  .activity h3 {
+    padding-block: 1rem;
+  }
+
+  .activity p {
+    max-width: 300px;
+    padding: 1rem;
+  }
+
+  img {
+    width: 100%;
+    max-width: 150px;
+    max-height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+}
+
+.guide-section {
+  @include flex-center(row-reverse);
+  max-width: 500px;
+  margin: 2rem auto;
+  padding: 1rem;
+  background: var(--AQUA);
+  border-bottom: 2px solid var(--DARK-BLUE);
+  text-align: center;
+
+  img {
+    max-width: 250px;
+    max-height: 250px;
+    object-fit: cover;
+  }
+
+  .guide-content {
+    padding: 1rem;
+    line-height: 1.5;
+
+    p {
+      padding-block: 1rem;
+    }
+  }
+}
+
+@import 'mobile';
